@@ -11,6 +11,7 @@ export const Menu = styled.div`
     flex-direction: column;
     height:70vh;
     align-items:center;
+    gap:20px;
     
 `
 
@@ -43,4 +44,30 @@ export const Submeter = styled.button`
     color:silver;
     background-color: ${props =>props.disabled ? 'crimson' : 'green'};
 `
-
+export const MenuFuncionario = styled.div`
+    padding:20px;
+    display: flex;
+    flex-direction: column;
+    height:130px;
+    width:200px;
+    gap:10px;
+    align-items:center;
+    background-color: darkslategray;
+    color:silver;
+    border-radius:20px;
+    `
+export const TituloFuncionario = styled.h4``
+export const EntradaProduto = styled.button`
+    border:0;
+    border-radius:10px;
+    width:100px;
+    color:silver;
+    background-color: ${props =>props.disabled ? 'crimson' : 'green'};
+`
+export const SaidaProduto = styled.button`
+    border:0;
+    border-radius:10px;
+    width:100px;
+    color:silver;
+    background-color: ${props =>props.disabled ? 'crimson' : 'green'};
+`
