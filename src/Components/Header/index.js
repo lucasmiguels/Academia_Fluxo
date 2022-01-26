@@ -10,16 +10,16 @@ export default function Header() {
         {nome: 'Treino', icone: <MdOutlineFitnessCenter/>},
         {nome: 'Agenda', icone: <MdOutlineCalendarToday/>},   
     ]
-    const renderList = itensMenu.map((item,index) => (
+    const renderizando = itensMenu.map((item,index) => (
         <MenuItem key = {index}>
-            {item.icone}
             {item.nome}
+            {item.icone}
         </MenuItem>
     ));
     return(
         <Head>
+            <HeaderMenu> {renderizando} </HeaderMenu>
             <HeaderName> Academia Fluxo </HeaderName>
-            <HeaderMenu> {renderList} </HeaderMenu>
         </Head>
         
     );

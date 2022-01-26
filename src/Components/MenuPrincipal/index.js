@@ -1,5 +1,7 @@
 import React, { useState,useEffect } from "react";
-import {Pergunta, Menu, MenuCliente, TituloCliente, Input, Submeter, MenuFuncionario, TituloFuncionario, EntradaProduto, SaidaProduto} from './styles'
+import {Pergunta, Cadaproduto, Funcionario, Listaprodutos,Cadaula,Cliente,Listaulas, Menu, MenuCliente, TituloCliente, Input, Submeter, MenuFuncionario, TituloFuncionario, EntradaProduto, SaidaProduto} from './styles'
+import { aulas } from "./aulasprodutos";
+import { produtos } from "./aulasprodutos";
 
 export default function MenuPrincipal() {
     const[cpf,setcpf] = useState('');
@@ -11,16 +13,30 @@ export default function MenuPrincipal() {
     const[actualProduct,setActualproduct] = useState ({})
     const[avaiableproduct,setAvaiableProduct] = useState(false)
 
+    const renderaulas = aulas.map((item,index) => (
+        <Cadaula key = {index}>
+            <li> Aula {item.id} de {item.nome} ({item.horario})  </li>
+        </Cadaula>
+    ));
+
+    const renderprodutos = produtos.map((item,index) => (
+        <Cadaproduto key = {index}>
+            <li> Produto {item.id}: {item.nome} </li>
+        </Cadaproduto>
+    ));
+
 
     function Reset(){
         setcpf('');
         setnumberclass('');
         setActualclass({});
+        console.log("Aula marcada")
     }
     function ResetFuncionario(){
         setpassword('');
         setnumberproduct('');
         setActualproduct({});
+        console.log("Obrigado por nos informar!")
     }
 
     useEffect(() => {
@@ -49,9 +65,10 @@ export default function MenuPrincipal() {
    
     return(
         <Menu>
-        <Pergunta> <u>Quem é você?</u> </Pergunta>
+        <Pergunta> <u>Aluno ou Funcionário?</u> </Pergunta>
+        <Cliente>
         <MenuCliente>
-            <TituloCliente> Cliente </TituloCliente>
+            <TituloCliente> Aluno </TituloCliente>
             <Input
              placeholder=' Digite seu CPF'
              value={cpf}
@@ -64,6 +81,11 @@ export default function MenuPrincipal() {
             ></Input>
             <Submeter onClick={Reset} disabled={!avaiable}> Submeter </Submeter>
         </MenuCliente>
+        <Listaulas>
+            {renderaulas}
+        </Listaulas>
+        </Cliente>
+        <Funcionario>
         <MenuFuncionario>
             <TituloFuncionario> Funcionario </TituloFuncionario>
             <Input
@@ -79,6 +101,8 @@ export default function MenuPrincipal() {
             <EntradaProduto onClick={ResetFuncionario} disabled={!avaiableproduct}> Entrada </EntradaProduto>
             <SaidaProduto onClick={ResetFuncionario} disabled={!avaiableproduct}> Saida </SaidaProduto>
         </MenuFuncionario>
+        <Listaprodutos> {renderprodutos} </Listaprodutos>
+        </Funcionario>
         </Menu>  
     );
 }
