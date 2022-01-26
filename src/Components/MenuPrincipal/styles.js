@@ -36,6 +36,7 @@ export const Input = styled.input`
 border:0;
 border-radius:10px;
 width: 200px;
+padding-left:10px;
 
 `
 
@@ -55,7 +56,7 @@ export const Listaulas = styled.div`
     background-color: darkslategray;
     color: silver;
     padding:20px;
-    height:155px;
+    height:165px;
     width:200px;
     font-size:smaller;
     border-radius:20px;
@@ -99,7 +100,7 @@ export const Listaprodutos = styled.div`
     background-color: darkslategray;
     color: silver;
     padding:20px;
-    height:140px;
+    height:145px;
     width:200px;
     font-size:medium;
     border-radius:20px;

@@ -82,6 +82,7 @@ export default function MenuPrincipal() {
             <Submeter onClick={Reset} disabled={!avaiable}> Submeter </Submeter>
         </MenuCliente>
         <Listaulas>
+            <h4> Aulas disponíveis: </h4>
             {renderaulas}
         </Listaulas>
         </Cliente>
@@ -101,7 +102,9 @@ export default function MenuPrincipal() {
             <EntradaProduto onClick={ResetFuncionario} disabled={!avaiableproduct}> Entrada </EntradaProduto>
             <SaidaProduto onClick={ResetFuncionario} disabled={!avaiableproduct}> Saida </SaidaProduto>
         </MenuFuncionario>
-        <Listaprodutos> {renderprodutos} </Listaprodutos>
+        <Listaprodutos>
+            <h3> Produtos registrados: </h3>
+             {renderprodutos} </Listaprodutos>
         </Funcionario>
         </Menu>  
     );
