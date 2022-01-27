@@ -3,7 +3,7 @@ import {Pergunta, Cadaproduto, Funcionario, Listaprodutos,Cadaula,Cliente,Listau
 import { aulas } from "./aulasprodutos";
 import { produtos } from "./aulasprodutos";
 
-export default function MenuPrincipal() {
+export default function Home() {
     const[cpf,setcpf] = useState('');
     const[numberclass,setnumberclass] = useState('');
     const[actualClass,setActualclass] = useState ({})
@@ -42,7 +42,8 @@ export default function MenuPrincipal() {
     useEffect(() => {
         setActualclass({
             identificador: cpf,
-            numeroaula: numberclass
+            numeroaula: numberclass,
+            aulatual: actualClass
         });
         if (!cpf || !numberclass){
             setAvaiable(false)
@@ -54,7 +55,8 @@ export default function MenuPrincipal() {
     useEffect(() => {
         setActualproduct({
             identificador: password,
-            numeroaula: numberproduct
+            numeroaula: numberproduct,
+            produtoatual: actualProduct
         });
         if (!password || !numberproduct){
             setAvaiableProduct(false)

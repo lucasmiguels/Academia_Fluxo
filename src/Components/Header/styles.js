@@ -8,6 +8,10 @@ export const MenuItem = styled.h4`
     justify-content:center;
     gap: 5px;
     cursor:pointer;
+    & a {
+        color:silver;
+        text-decoration:none;
+    }
 `
 export const Head = styled.div`
     display: flex;
