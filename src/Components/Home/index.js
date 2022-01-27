@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from "react";
-import {Pergunta, Cadaproduto, Funcionario, Listaprodutos,Cadaula,Cliente,Listaulas, Menu, MenuCliente, TituloCliente, Input, Submeter, MenuFuncionario, TituloFuncionario, EntradaProduto, SaidaProduto} from './styles'
+import {Pergunta, Cadaproduto, Funcionario, Listaprodutos, QuantidadeItem, Quantidade, MaisouMenos,Cadaula,Cliente,Listaulas, Menu, MenuCliente, TituloCliente, Input, Submeter, MenuFuncionario, TituloFuncionario, EntradaProduto, SaidaProduto} from './styles'
 import { aulas } from "./aulasprodutos";
 import { produtos } from "./aulasprodutos";
 
@@ -12,6 +12,7 @@ export default function Home() {
     const[numberproduct,setnumberproduct] = useState('')
     const[actualProduct,setActualproduct] = useState ({})
     const[avaiableproduct,setAvaiableProduct] = useState(false)
+    const[quantity,setQuantity] = useState(0)
 
     const renderaulas = aulas.map((item,index) => (
         <Cadaula key = {index}>
@@ -36,7 +37,16 @@ export default function Home() {
         setpassword('');
         setnumberproduct('');
         setActualproduct({});
+        setQuantity(0)
         console.log("Obrigado por nos informar!")
+    }
+    function Aumentar(){
+        setQuantity(quantity + 1);
+    }
+    function Diminuir(){
+        if (quantity === 0){
+            console.log("Erro ao decrementar")
+        } else setQuantity(quantity-1);
     }
 
     useEffect(() => {
@@ -56,14 +66,15 @@ export default function Home() {
         setActualproduct({
             identificador: password,
             numeroaula: numberproduct,
-            produtoatual: actualProduct
+            produtoatual: actualProduct,
+            quantidade: quantity
         });
-        if (!password || !numberproduct){
+        if (!password || !numberproduct || quantity ===0){
             setAvaiableProduct(false)
         } else {
             setAvaiableProduct(true)
         };
-    }, [password,numberproduct]);
+    }, [password,numberproduct,quantity]);
    
     return(
         <Menu>
@@ -101,6 +112,11 @@ export default function Home() {
             value={numberproduct}
             onChange={(event) => setnumberproduct(event.currentTarget.value)}
             ></Input>
+            <QuantidadeItem>
+                <Quantidade>{quantity} unidade(s)</Quantidade>
+                <MaisouMenos onClick={Aumentar}> + </MaisouMenos>
+                <MaisouMenos onClick={Diminuir}> - </MaisouMenos>
+            </QuantidadeItem>
             <EntradaProduto onClick={ResetFuncionario} disabled={!avaiableproduct}> Entrada </EntradaProduto>
             <SaidaProduto onClick={ResetFuncionario} disabled={!avaiableproduct}> Saida </SaidaProduto>
         </MenuFuncionario>

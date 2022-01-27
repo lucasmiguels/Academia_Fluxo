@@ -68,7 +68,7 @@ export const MenuFuncionario = styled.div`
     padding:20px;
     display: flex;
     flex-direction: column;
-    height:130px;
+    height:145px;
     width:200px;
     gap:10px;
     align-items:center;
@@ -109,3 +109,16 @@ export const Listaprodutos = styled.div`
 
 `
 export const Cadaproduto = styled.div``
+export const QuantidadeItem = styled.div`
+    display:flex;
+    flex-direction:row;
+    gap:10px;
+`
+export const Quantidade = styled.p``
+export const MaisouMenos = styled.button`
+    border:none;
+    background-color:silver;
+    border-radius:10px;
+    width:10px;
+
+`
