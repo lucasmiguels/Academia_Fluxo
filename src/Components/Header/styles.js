@@ -11,7 +11,9 @@ export const MenuItem = styled.h4`
     & a {
         color:silver;
         text-decoration:none;
+       
     }
+
 `
 export const Head = styled.div`
     display: flex;

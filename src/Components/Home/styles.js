@@ -125,5 +125,5 @@ export const MaisouMenos = styled.button`
 export const Image = styled.img`
     padding-left: 60px;
     padding-right: 60px;
-    border-radius: 20%;
+    border-radius: 25%;
 `
