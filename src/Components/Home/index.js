@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from "react";
-import {Pergunta, Cadaproduto, Funcionario, Listaprodutos, QuantidadeItem, Quantidade, MaisouMenos,Cadaula,Cliente,Listaulas, Menu, MenuCliente, TituloCliente, Input, Submeter, MenuFuncionario, TituloFuncionario, EntradaProduto, SaidaProduto} from './styles'
+import {Pergunta,Image, Cadaproduto, Funcionario, Listaprodutos, QuantidadeItem, Quantidade, MaisouMenos,Cadaula,Cliente,Listaulas, Menu, MenuCliente, TituloCliente, Input, Submeter, MenuFuncionario, TituloFuncionario, EntradaProduto, SaidaProduto} from './styles'
 import { aulas } from "./aulasprodutos";
 import { produtos } from "./aulasprodutos";
 
@@ -80,6 +80,7 @@ export default function Home() {
         <Menu>
         <Pergunta> <u>Aluno ou Funcionário?</u> </Pergunta>
         <Cliente>
+        <Image src="/imagens/download.jpg" alt="Image" width="275" height="183"/>
         <MenuCliente>
             <TituloCliente> Aluno </TituloCliente>
             <Input
@@ -98,8 +99,10 @@ export default function Home() {
             <h4> Aulas disponíveis: </h4>
             {renderaulas}
         </Listaulas>
+        <Image src="/imagens/download (1).jpg" alt="Image" width="275" height="183"/>
         </Cliente>
         <Funcionario>
+        <Image src="/imagens/download (2).jpg" alt="Image" width="275" height="183"/>
         <MenuFuncionario>
             <TituloFuncionario> Funcionario </TituloFuncionario>
             <Input
@@ -123,6 +126,9 @@ export default function Home() {
         <Listaprodutos>
             <h3> Produtos registrados: </h3>
              {renderprodutos} </Listaprodutos>
+    
+        <Image src="/imagens/download (3).jpg" alt="Image" width="275" height="183"/>
+        
         </Funcionario>
         </Menu>  
     );

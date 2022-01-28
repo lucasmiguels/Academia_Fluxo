@@ -6,7 +6,7 @@ export default function Agenda() {
         <Menu>
         <Titulo> Agenda </Titulo>
         <NovosAgendamentos>
-           <h2> <u> Seus agendamentos </u></h2>
+           <h2> <u> Seus agendamentos: </u></h2>
            <h3> Ops, não encontramos nenhum agendamento seu. </h3>
         </NovosAgendamentos>
         </Menu>

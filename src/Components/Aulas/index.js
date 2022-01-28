@@ -6,7 +6,7 @@ export default function Aulas() {
         <Menu>
         <Titulo>Aulas</Titulo>
         <NovasAulas>
-            <h2><u> Mais aulas</u></h2>
+            <h2><u> Mais aulas:</u></h2>
             <h3>Ops, não encontramos nenhuma aula no momento.</h3>
         </NovasAulas>
         </Menu>
